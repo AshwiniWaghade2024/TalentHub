@@ -9,5 +9,5 @@ public class TalenthubBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TalenthubBackendApplication.class, args);
 	}
-
+ 
 }
