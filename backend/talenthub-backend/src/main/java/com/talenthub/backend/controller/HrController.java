@@ -62,16 +62,31 @@ public class HrController {
         return employeeRepository.findAll();
     }
 
+    @Autowired
+    DepartmentRepository departmentRepository;
+
     //UPDATE EMPLOYEE
     @PutMapping("/employee/{id}")
     @PreAuthorize("hasRole('HR')")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee updated) {
         Employee emp = employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Not found"));
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
 
         emp.setFirstName(updated.getFirstName());
         emp.setLastName(updated.getLastName());
         emp.setEmail(updated.getEmail());
+
+        // Also update department if provided
+        if (updated.getDepartment() != null && updated.getDepartment().getId() != null) {
+            Department dept = departmentRepository.findById(updated.getDepartment().getId())
+                    .orElseThrow(() -> new RuntimeException("Department not found"));
+            emp.setDepartment(dept);
+        }
+
+        // Also update salary if provided
+        if (updated.getBasicSalary() != null) {
+            emp.setBasicSalary(updated.getBasicSalary());
+        }
 
         return employeeRepository.save(emp);
     }

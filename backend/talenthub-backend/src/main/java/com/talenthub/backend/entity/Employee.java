@@ -35,6 +35,8 @@ public class Employee {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    private Double basicSalary;
+
     public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
