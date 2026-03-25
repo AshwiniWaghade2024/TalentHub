@@ -1,0 +1,35 @@
+.employee-page {
+    padding: 30px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.profile-img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.profile-info div {
+    background: #f4f6fb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 12px;
+    color: #777;
+}
