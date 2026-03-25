@@ -2,6 +2,7 @@ import Register from "./pages/Registration";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
+import Employee from "./pages/Employee";
 import './App.css';
 
 function App() {
