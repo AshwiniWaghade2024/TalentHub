@@ -30,6 +30,7 @@ function Employee({ userData, onProfileUpdate }) {
                 },
                 body: JSON.stringify(form)
             });
+            const data = await response.json();
             if (response.ok) {
                 setMessage("Profile updated successfully!");
                 setIsEditing(false);
@@ -37,7 +38,7 @@ function Employee({ userData, onProfileUpdate }) {
                     onProfileUpdate(form);
                 }
             } else {
-                setMessage("Failed to update profile.");
+                setMessage(data.message || "Failed to update profile.");
             }
         } catch (err) {
             setMessage("Connection error.");

@@ -5,7 +5,7 @@ import { useNotification } from "../context/NotificationContext";
 export default function Register({ goToLogin }) {
   const { showNotification } = useNotification();
   const [form, setForm] = useState({
-    fullName: "", email: "", phone: "", role: "", department: "", password: "", confirmPassword: ""
+    fullName: "", email: "", phone: "", role: "", department: "", password: "", confirmPassword: "", rememberMe: false
   });
   const [isRoleOpen, setIsRoleOpen] = useState(false);
   const [showPwd, setShowPwd] = useState(false);
@@ -150,6 +150,11 @@ export default function Register({ goToLogin }) {
               <input type={showConfPwd ? "text" : "password"} name="confirmPassword" placeholder="Confirm password" value={form.confirmPassword} onChange={handleChange} className="input-no-left-icon" required />
               <span className="reg-icon-right" onClick={() => setShowConfPwd(!showConfPwd)}><EyeIcon /></span>
             </div>
+          </div>
+
+          <div className="reg-field full-width flex-center-left">
+            <input type="checkbox" id="rememberMe" name="rememberMe" checked={form.rememberMe} onChange={handleChange} className="custom-checkbox" />
+            <label htmlFor="rememberMe" className="checkbox-label">Remember Me</label>
           </div>
 
           <div className="reg-field full-width">
