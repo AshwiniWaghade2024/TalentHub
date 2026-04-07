@@ -33,20 +33,25 @@ public class PerformanceFeedbackController {
     // 1. Submit Feedback (HR or ADMIN only)
     @PostMapping("/submit/{employeeId}")
     @PreAuthorize("hasRole('HR') or hasRole('ADMIN')")
-    public ResponseEntity<?> submitFeedback(@PathVariable Long employeeId, @RequestBody String feedbackText) {
+    public ResponseEntity<?> submitFeedback(@PathVariable Long employeeId, @RequestBody PerformanceFeedback feedback) {
         UserDetailsImpl userPrincipal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new RuntimeException("Error: Employee not found."));
-
-        PerformanceFeedback feedback = new PerformanceFeedback();
+ 
         feedback.setEmployee(employee);
         feedback.setSubmittedByUserId(userPrincipal.getId());
-        feedback.setFeedbackText(feedbackText);
         feedback.setFeedbackDate(LocalDate.now());
 
         service.submitFeedback(feedback);
-        return ResponseEntity.ok(new MessageResponse("Performance feedback submitted successfuly."));
+        return ResponseEntity.ok(new MessageResponse("Performance review submitted successfully."));
+    }
+
+    // 1b. View All (HR or ADMIN only)
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('HR') or hasRole('ADMIN')")
+    public List<PerformanceFeedback> getAllFeedback() {
+        return service.getAllFeedback(); // Will add this to service
     }
 
     // 2. View My Feedback (Employee only)

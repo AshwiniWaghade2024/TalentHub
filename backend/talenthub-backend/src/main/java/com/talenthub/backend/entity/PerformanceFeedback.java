@@ -17,7 +17,7 @@ public class PerformanceFeedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
@@ -29,6 +29,10 @@ public class PerformanceFeedback {
 
     @Column(name = "feedback_date")
     private LocalDate feedbackDate;
+
+    private String kpi;
+    private Integer rating; // 1-5 stars
+    private String promotionRecommendation; // e.g., "Yes", "No", "Maybe"
 
     public PerformanceFeedback(Employee employee, Long submittedByUserId, String feedbackText) {
         this.employee = employee;

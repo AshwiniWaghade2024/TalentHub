@@ -1,0 +1,205 @@
+.home-container {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5%;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.home-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.home-nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-nav-login {
+  background: transparent;
+  border: none;
+  color: #475569;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+.btn-nav-login:hover { color: #1e293b; background: #f1f5f9; }
+
+.btn-nav-register {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+}
+.btn-nav-register:hover { 
+  background: #2563eb; 
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5); 
+}
+
+.home-hero {
+  padding: 120px 5%;
+  text-align: center;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05), transparent 50%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: #475569;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-hero-primary {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 15px -3px rgba(30, 41, 59, 0.3);
+}
+.btn-hero-primary:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 20px 25px -5px rgba(30, 41, 59, 0.4); 
+}
+
+.btn-hero-secondary {
+  background: white;
+  color: #1e293b;
+  border: 2px solid #cbd5e1;
+  padding: 14px 34px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-hero-secondary:hover { 
+  background: #f8fafc; 
+  border-color: #94a3b8; 
+}
+
+.home-features {
+  padding: 100px 5%;
+  background: white;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 64px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 40px 32px;
+  background: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.feature-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+  background: white;
+  border-color: #cbd5e1;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+.feature-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.feature-card p {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.home-footer {
+  text-align: center;
+  padding: 48px 5%;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .btn-hero-primary, .btn-hero-secondary { width: 100%; }
+}

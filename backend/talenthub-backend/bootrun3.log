@@ -1,0 +1,141 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.talenthub:talenthub-backend >-------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.4:run (default-cli) > test-compile @ talenthub-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ talenthub-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ talenthub-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ talenthub-backend ---
+[INFO] skip non existing resourceDirectory D:\Ashwini\Internship_WeIntern\TalentHub\TalentHub\backend\talenthub-backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ talenthub-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.0.4:run (default-cli) < test-compile @ talenthub-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.4:run (default-cli) @ talenthub-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.4)
+
+2026-03-25T23:14:57.009+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] c.t.backend.TalenthubBackendApplication  : Starting TalenthubBackendApplication using Java 21.0.10 with PID 25420 (D:\Ashwini\Internship_WeIntern\TalentHub\TalentHub\backend\talenthub-backend\target\classes started by Ashwini Waghade in D:\Ashwini\Internship_WeIntern\TalentHub\TalentHub\backend\talenthub-backend)
+2026-03-25T23:14:57.014+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] c.t.backend.TalenthubBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-03-25T23:14:57.095+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-25T23:14:57.095+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-25T23:14:58.205+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-25T23:14:58.313+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 9 JPA repository interfaces.
+2026-03-25T23:14:59.117+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-25T23:14:59.133+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-25T23:14:59.133+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-25T23:14:59.219+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2122 ms
+2026-03-25T23:14:59.397+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-25T23:14:59.469+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-03-25T23:15:00.092+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-25T23:15:00.130+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-25T23:15:00.595+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@592b994a
+2026-03-25T23:15:00.597+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-25T23:15:00.680+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-25T23:15:00.726+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/talenthub]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: talenthub/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-25T23:15:01.902+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table attendance (id bigint generated by default as identity, check_in_time time(0), check_out_time time(0), date date not null, employee_id bigint not null, primary key (id))
+Hibernate: create table departments (id bigint generated by default as identity, name varchar(255) not null, primary key (id))
+Hibernate: create table employees (id bigint generated by default as identity, basic_salary float(53), email varchar(255) not null, first_name varchar(255) not null, last_name varchar(255) not null, department_id bigint, role_id integer, primary key (id))
+Hibernate: create table leave_requests (id bigint generated by default as identity, end_date date not null, reason varchar(255) not null, start_date date not null, status varchar(20) check ((status in ('PENDING','APPROVED','REJECTED'))), employee_id bigint not null, manager_user_id bigint, primary key (id))
+Hibernate: create table payslips (id bigint generated by default as identity, base_salary numeric(38,2) not null, created_at timestamp(6) not null, esi_deduction numeric(38,2) not null, generated_at timestamp(6) not null, month integer not null, net_salary numeric(38,2) not null, pf_deduction numeric(38,2) not null, total_deductions numeric(38,2) not null, updated_at timestamp(6), year integer not null, employee_id bigint not null, primary key (id))
+Hibernate: create table performance_feedback (id bigint generated by default as identity, feedback_date date, feedback_text varchar(1000), submitted_by_user_id bigint not null, employee_id bigint not null, primary key (id))
+Hibernate: create table roles (id integer generated by default as identity, name varchar(20) check ((name in ('ROLE_ADMIN','ROLE_HR','ROLE_EMPLOYEE'))), primary key (id))
+Hibernate: create table salaries (id bigint generated by default as identity, basic_salary float(53), esi_deduction float(53), month integer, net_salary float(53), pay_date date, pf_deduction float(53), year integer, employee_id bigint not null, primary key (id))
+Hibernate: create table users (id bigint generated by default as identity, password_hash varchar(120) not null, temporary_password_flag boolean, username varchar(50) not null, employee_id bigint, role_id integer, primary key (id))
+Hibernate: alter table if exists departments drop constraint if exists UKj6cwks7xecs5jov19ro8ge3qk
+2026-03-25T23:15:02.222+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-03-25T23:15:02.222+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : constraint "ukj6cwks7xecs5jov19ro8ge3qk" of relation "departments" does not exist, skipping
+Hibernate: alter table if exists departments add constraint UKj6cwks7xecs5jov19ro8ge3qk unique (name)
+Hibernate: alter table if exists employees drop constraint if exists UKj9xgmd0ya5jmus09o0b8pqrpb
+2026-03-25T23:15:02.222+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-03-25T23:15:02.222+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : constraint "ukj9xgmd0ya5jmus09o0b8pqrpb" of relation "employees" does not exist, skipping
+Hibernate: alter table if exists employees add constraint UKj9xgmd0ya5jmus09o0b8pqrpb unique (email)
+Hibernate: alter table if exists payslips drop constraint if exists UKfdj0pams7wwy6fqdrhabe43fs
+2026-03-25T23:15:02.226+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-03-25T23:15:02.226+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : constraint "ukfdj0pams7wwy6fqdrhabe43fs" of relation "payslips" does not exist, skipping
+Hibernate: alter table if exists payslips add constraint UKfdj0pams7wwy6fqdrhabe43fs unique (employee_id, year, month)
+Hibernate: alter table if exists users drop constraint if exists UKr43af9ap4edm43mmtq01oddj6
+2026-03-25T23:15:02.230+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-03-25T23:15:02.230+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : constraint "ukr43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UKr43af9ap4edm43mmtq01oddj6 unique (username)
+Hibernate: alter table if exists users drop constraint if exists UKd1s31g1a7ilra77m65xmka3ei
+2026-03-25T23:15:02.233+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-03-25T23:15:02.233+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] org.hibernate.orm.jdbc.warn              : constraint "ukd1s31g1a7ilra77m65xmka3ei" of relation "users" does not exist, skipping
+Hibernate: alter table if exists users add constraint UKd1s31g1a7ilra77m65xmka3ei unique (employee_id)
+Hibernate: alter table if exists attendance add constraint FKb48lmkou5j4rvde9sr88bqgjw foreign key (employee_id) references employees
+Hibernate: alter table if exists employees add constraint FKgy4qe3dnqrm3ktd76sxp7n4c2 foreign key (department_id) references departments
+Hibernate: alter table if exists employees add constraint FKah490190ww1q2a4piuv41hk6e foreign key (role_id) references roles
+Hibernate: alter table if exists leave_requests add constraint FKrxff2xg1kffbjfh5maxwoqyhw foreign key (employee_id) references employees
+Hibernate: alter table if exists leave_requests add constraint FK9k9qp8onj8u8s38qnucd1iaix foreign key (manager_user_id) references users
+Hibernate: alter table if exists payslips add constraint FKi2u90djkfkqooebb9b26gxqmi foreign key (employee_id) references employees
+Hibernate: alter table if exists performance_feedback add constraint FKgfmk9ifnhkd8dwtc7ilqbf88s foreign key (employee_id) references employees
+Hibernate: alter table if exists salaries add constraint FK1utmvufusgyktdtbmo4xfas10 foreign key (employee_id) references employees
+Hibernate: alter table if exists users add constraint FK6p2ib82uai0pj9yk1iassppgq foreign key (employee_id) references employees
+Hibernate: alter table if exists users add constraint FKp56c1712k691lhsyewcssf40f foreign key (role_id) references roles
+2026-03-25T23:15:02.259+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25T23:15:02.342+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-25T23:15:02.741+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-03-25T23:15:02.741+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-25T23:15:03.834+05:30  WARN 25420 --- [talenthub-backend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-25T23:15:04.517+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/talenthub'
+2026-03-25T23:15:04.579+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-25T23:15:04.585+05:30  INFO 25420 --- [talenthub-backend] [  restartedMain] c.t.backend.TalenthubBackendApplication  : Started TalenthubBackendApplication in 8.094 seconds (process running for 8.814)
+Hibernate: select count(*) from roles r1_0
+Hibernate: insert into roles (name) values (?)
+Hibernate: insert into roles (name) values (?)
+Hibernate: insert into roles (name) values (?)
+Roles initialized: ROLE_ADMIN, ROLE_HR, ROLE_EMPLOYEE
+Hibernate: select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+Hibernate: select r1_0.id,r1_0.name from roles r1_0 where r1_0.name=?
+Hibernate: insert into users (employee_id,password_hash,role_id,temporary_password_flag,username) values (?,?,?,?,?)
+Default admin user created: admin / admin123
+2026-03-25T23:20:10.619+05:30  INFO 25420 --- [talenthub-backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-25T23:20:10.621+05:30  INFO 25420 --- [talenthub-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-25T23:20:10.623+05:30  INFO 25420 --- [talenthub-backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-25T23:20:11.430+05:30  WARN 25420 --- [talenthub-backend] [io-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)']
+Hibernate: select u1_0.id,u1_0.employee_id,u1_0.password_hash,u1_0.role_id,u1_0.temporary_password_flag,u1_0.username from users u1_0 where u1_0.username=?
+Hibernate: select r1_0.id,r1_0.name from roles r1_0 where r1_0.id=?
+2026-03-25T23:22:57.426+05:30  WARN 25420 --- [talenthub-backend] [nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.servlet.ServletException: Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)']
+^CTerminate batch job (Y/N)? 2026-03-25T23:25:23.960+05:30  INFO 25420 --- [talenthub-backend] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-25T23:25:23.973+05:30  INFO 25420 --- [talenthub-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-25T23:25:23.984+05:30  INFO 25420 --- [talenthub-backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25T23:25:23.991+05:30  INFO 25420 --- [talenthub-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-25T23:25:23.997+05:30  INFO 25420 --- [talenthub-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10:30 min
+[INFO] Finished at: 2026-03-25T23:25:24+05:30
+[INFO] ------------------------------------------------------------------------

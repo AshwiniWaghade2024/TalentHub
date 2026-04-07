@@ -23,4 +23,8 @@ public class PerformanceFeedbackService {
     public List<PerformanceFeedback> getEmployeeFeedback(Employee employee) {
         return repo.findByEmployee(employee);
     }
+
+    public List<PerformanceFeedback> getAllFeedback() {
+        return repo.findAll();
+    }
 }

@@ -34,3 +34,4 @@ build/
 
 ### Environment Variables - DO NOT PUSH TO GITHUB ###
 .env
+src/main/resources/application.properties
