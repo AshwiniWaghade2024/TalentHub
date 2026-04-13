@@ -14,7 +14,7 @@ export default function LeaveManagement({ userData }) {
     setLoading(true);
     const endpoint = (role === 'Admin' || role === 'HR') ? "/api/leave/all" : "/api/leave/my-leaves";
     try {
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -44,7 +44,7 @@ export default function LeaveManagement({ userData }) {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/leave/request", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/request`, {
         method: "POST",
         headers: { 
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
@@ -68,7 +68,7 @@ export default function LeaveManagement({ userData }) {
 
   const handleLeaveAction = async (id, action) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/leave/${action}/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/${action}/${id}`, {
         method: "PUT",
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });

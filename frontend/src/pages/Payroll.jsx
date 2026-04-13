@@ -14,7 +14,7 @@ export default function Payroll({ userData }) {
     setLoading(true);
     const endpoint = (role === 'Admin' || role === 'HR') ? "/api/payroll/all-history" : "/api/payroll/my-history";
     try {
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -26,7 +26,7 @@ export default function Payroll({ userData }) {
   const fetchEmployees = async () => {
     if (role !== 'HR' && role !== 'Admin') return;
     try {
-      const response = await fetch("http://localhost:8080/api/hr/employees", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hr/employees`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -43,7 +43,7 @@ export default function Payroll({ userData }) {
     const month = new Date().getMonth() + 1;
     const year = new Date().getFullYear();
     try {
-      const response = await fetch(`http://localhost:8080/api/payroll/calculate/${empId}?month=${month}&year=${year}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payroll/calculate/${empId}?month=${month}&year=${year}`, {
         method: "POST",
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
@@ -59,7 +59,7 @@ export default function Payroll({ userData }) {
 
   const handleSalaryUpdate = async (empId, newSalary) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/hr/employee/${empId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hr/employee/${empId}`, {
         method: "PUT",
         headers: { 
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
@@ -78,7 +78,7 @@ export default function Payroll({ userData }) {
 
   const downloadPayslip = async (salaryId) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/payroll/download-payslip/${salaryId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payroll/download-payslip/${salaryId}`, {
             headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
         });
         if (response.ok) {

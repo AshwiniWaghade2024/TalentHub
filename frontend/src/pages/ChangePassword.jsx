@@ -23,7 +23,7 @@ export default function ChangePassword({ onPasswordChanged, onCancel }) {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/api/users/change-password", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/users/change-password`, {
         method: "POST",
         headers: { 
             "Content-Type": "application/json",

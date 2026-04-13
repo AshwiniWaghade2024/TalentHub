@@ -34,7 +34,7 @@ export default function Performance({ userData }) {
     setLoading(true);
     const endpoint = (role === 'Admin' || role === 'HR') ? "/api/feedback/all" : "/api/feedback/my-feedback";
     try {
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -46,7 +46,7 @@ export default function Performance({ userData }) {
   const fetchEmployees = async () => {
     if (role !== 'HR' && role !== 'Admin') return;
     try {
-      const response = await fetch("http://localhost:8080/api/hr/employees", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hr/employees`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
@@ -62,7 +62,7 @@ export default function Performance({ userData }) {
   const handleSubmitReview = async () => {
     if (!newReview.employeeId || !newReview.feedbackText) return showNotification("Please fill details", "info");
     try {
-      const response = await fetch(`http://localhost:8080/api/feedback/submit/${newReview.employeeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/feedback/submit/${newReview.employeeId}`, {
         method: "POST",
         headers: { 
           "Authorization": `Bearer ${localStorage.getItem("token")}`,

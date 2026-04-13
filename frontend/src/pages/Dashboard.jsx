@@ -26,7 +26,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
         try {
-            const resp = await fetch("http://localhost:8080/api/admin/stats", {
+            const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/stats`, {
                 headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
             });
             const data = await resp.json();
@@ -109,7 +109,7 @@ const HRDashboard = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const resp = await fetch("http://localhost:8080/api/admin/stats", {
+                const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/stats`, {
                     headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
                 });
                 const data = await resp.json();
@@ -157,7 +157,7 @@ const UserManagement = ({ role }) => {
   const fetchUsers = async () => {
     const ep = role === 'Admin' ? '/api/admin/hr-list' : '/api/hr/employees';
     try {
-      const resp = await fetch(`http://localhost:8080${ep}`, {
+      const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}${ep}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await resp.json();
@@ -173,7 +173,7 @@ const UserManagement = ({ role }) => {
     const endpoint = role === 'Admin' ? `/api/admin/create-hr?username=${email}&tempPassword=${password}` : `/api/hr/create-employee?tempPassword=${password}`;
     const body = role === 'HR' ? JSON.stringify({ email, firstName: email.split('@')[0], lastName: "User", basicSalary: 50000 }) : null;
     try {
-      const resp = await fetch(`http://localhost:8080${endpoint}`, {
+      const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         method: "POST", headers: { "Authorization": `Bearer ${localStorage.getItem("token")}`, "Content-Type": "application/json" }, body
       });
       const data = await resp.json();
@@ -191,7 +191,7 @@ const UserManagement = ({ role }) => {
   const handleResetPassword = async (id) => {
     if (!await confirm("Reset this employee's password to a new temporary one?")) return;
     try {
-      const resp = await fetch(`http://localhost:8080/api/hr/employee/${id}/reset-password`, {
+      const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/hr/employee/${id}/reset-password`, {
         method: 'POST',
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
@@ -206,7 +206,7 @@ const UserManagement = ({ role }) => {
     if (!await confirm("Delete this user?")) return;
     const ep = role === 'Admin' ? `/api/admin/delete-hr/${id}` : `/api/hr/employee/${id}`;
     try {
-      const resp = await fetch(`http://localhost:8080${ep}`, {
+      const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}${ep}`, {
         method: 'DELETE',
         headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
@@ -219,7 +219,7 @@ const UserManagement = ({ role }) => {
 
   const showHRDetails = async (hr) => {
       try {
-          const resp = await fetch(`http://localhost:8080/api/admin/hr/${hr.id}/employees`, {
+          const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/hr/${hr.id}/employees`, {
               headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
           });
           const list = await resp.json();
@@ -426,7 +426,7 @@ export default function Dashboard({ userData, onLogout, onUpdateUserData }) {
       let list = [];
 
       if (role === 'HR' || role === 'Admin') {
-        const resp = await fetch("http://localhost:8080/api/leave/all", { headers });
+        const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/all`, { headers });
         if (resp.ok) {
           const data = await resp.json();
           data.filter(l => l.status === 'PENDING').slice(0, 5).forEach(l => {
@@ -435,8 +435,8 @@ export default function Dashboard({ userData, onLogout, onUpdateUserData }) {
         }
       } else {
         const [respL, respP] = await Promise.all([
-          fetch("http://localhost:8080/api/leave/my-leaves", { headers }),
-          fetch("http://localhost:8080/api/payroll/my-history", { headers })
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/api/leave/my-leaves`, { headers }),
+          fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payroll/my-history`, { headers })
         ]);
 
         if (respL.ok) {
@@ -527,7 +527,7 @@ export default function Dashboard({ userData, onLogout, onUpdateUserData }) {
     if (role === 'Employee') {
         const fetchTodayStatus = async () => {
             try {
-                const resp = await fetch("http://localhost:8080/api/attendance/my-history", {
+                const resp = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/attendance/my-history`, {
                     headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
                 });
                 const history = await resp.json();
@@ -547,7 +547,7 @@ export default function Dashboard({ userData, onLogout, onUpdateUserData }) {
   const markAttendance = async (type) => {
     const endpoint = type === 'in' ? '/api/attendance/check-in' : '/api/attendance/check-out';
     try {
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
         method: "POST", headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
       });
       const data = await response.json();
