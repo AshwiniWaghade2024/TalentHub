@@ -1,12 +1,13 @@
 package com.talenthub.backend.service;
 
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.*;
+import com.lowagie.text.*;
+import com.lowagie.text.pdf.*;
 import com.talenthub.backend.entity.Payslip;
 import com.talenthub.backend.entity.Employee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.awt.Color;
 import java.io.ByteArrayOutputStream;
 import java.math.BigDecimal;
 
@@ -116,19 +117,19 @@ public class PayslipPdfGeneratorService {
         table.setSpacingAfter(20f);
         table.setWidths(new float[]{3, 1});
 
-        PdfPCell labelCell = new PdfPCell(new Paragraph("NET SALARY", new Font(Font.HELVETICA, 12, Font.BOLD)));
+        Font labelFont = new Font(Font.HELVETICA, 12, Font.BOLD, Color.WHITE);
+        PdfPCell labelCell = new PdfPCell(new Paragraph("NET SALARY", labelFont));
         labelCell.setPadding(10f);
         labelCell.setBackgroundColor(new Color(0, 102, 204));
-        labelCell.setTextColor(Color.WHITE);
         table.addCell(labelCell);
 
+        Font valueFont = new Font(Font.HELVETICA, 12, Font.BOLD, Color.WHITE);
         PdfPCell valueCell = new PdfPCell(new Paragraph(
                 formatCurrency(payslip.getNetSalary()),
-                new Font(Font.HELVETICA, 12, Font.BOLD)
+                valueFont
         ));
         valueCell.setPadding(10f);
         valueCell.setBackgroundColor(new Color(0, 102, 204));
-        valueCell.setTextColor(Color.WHITE);
         valueCell.setHorizontalAlignment(Element.ALIGN_RIGHT);
         table.addCell(valueCell);
 

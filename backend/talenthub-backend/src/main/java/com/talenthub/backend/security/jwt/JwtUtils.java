@@ -17,10 +17,10 @@ import java.util.Date;
 public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("${talenthub.app.jwtSecret:======================TalentHubJWTSecretKey======================}")
+    @Value("${talenthub.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${talenthub.app.jwtExpirationMs:86400000}")
+    @Value("${talenthub.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
     public String generateJwtToken(Authentication authentication) {

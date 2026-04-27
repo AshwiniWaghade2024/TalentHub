@@ -18,7 +18,7 @@ public class LeaveRequest {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
@@ -31,6 +31,9 @@ public class LeaveRequest {
     @NotBlank
     private String reason;
 
+    @NotBlank
+    private String type;
+
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private ELeaveStatus status = ELeaveStatus.PENDING;
@@ -39,10 +42,11 @@ public class LeaveRequest {
     @JoinColumn(name = "manager_user_id")
     private User manager; // The user (Manager/HR) who approves it
 
-    public LeaveRequest(Employee employee, LocalDate startDate, LocalDate endDate, String reason) {
+    public LeaveRequest(Employee employee, LocalDate startDate, LocalDate endDate, String reason, String type) {
         this.employee = employee;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reason = reason;
+        this.type = type;
     }
 }

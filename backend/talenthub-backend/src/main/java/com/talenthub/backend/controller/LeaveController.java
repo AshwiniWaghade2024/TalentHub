@@ -63,6 +63,13 @@ public class LeaveController {
         return leaveRequestRepository.findByStatus(ELeaveStatus.PENDING);
     }
 
+    // 3b. View all leaves (HR or ADMIN)
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('HR') or hasRole('ADMIN')")
+    public List<LeaveRequest> getAllLeaves() {
+        return leaveRequestRepository.findAll();
+    }
+
     // 4. Approve leave request
     @PutMapping("/approve/{id}")
     @PreAuthorize("hasRole('HR') or hasRole('ADMIN')")

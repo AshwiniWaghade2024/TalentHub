@@ -1,66 +1,49 @@
 package com.talenthub.backend.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "salaries")
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Salary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id", unique = true, nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @NotNull
-    @DecimalMin(value = "0.0", inclusive = false, message = "Base salary must be greater than 0")
-    @Column(nullable = false)
-    private BigDecimal baseSalary;
+    private Integer month; // 1-12
+    private Integer year;
 
-    @NotNull
-    @DecimalMin(value = "0.0", inclusive = true)
-    @Column(nullable = false)
-    private BigDecimal pfPercentage = BigDecimal.valueOf(12);
+    @Column(name = "basic_salary")
+    private Double basicSalary;
 
-    @NotNull
-    @DecimalMin(value = "0.0", inclusive = true)
-    @Column(nullable = false)
-    private BigDecimal esiPercentage = BigDecimal.valueOf(0.75);
+    @Column(name = "pf_deduction")
+    private Double pfDeduction;
 
-    @Column(name = "effective_from", nullable = false)
-    private LocalDateTime effectiveFrom;
+    @Column(name = "esi_deduction")
+    private Double esiDeduction;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "net_salary")
+    private Double netSalary;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @Column(name = "pay_date")
+    private LocalDate payDate;
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-        if (effectiveFrom == null) {
-            effectiveFrom = LocalDateTime.now();
-        }
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
+    public Salary(Employee employee, Integer month, Integer year, Double basicSalary) {
+        this.employee = employee;
+        this.month = month;
+        this.year = year;
+        this.basicSalary = basicSalary;
+        this.payDate = LocalDate.now();
     }
 }
